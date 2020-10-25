@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.omelchenkoaleks.scalecenter.adapter.RecyclerAdapter
+import com.omelchenkoaleks.scalecenter.layout_manager.ScaleCenterItemLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -18,8 +19,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mRecyclerView = recycler_view
-        val layoutManager: LinearLayoutManager = LinearLayoutManager(this)
-        mRecyclerView.layoutManager = layoutManager
+//        val layoutManager: LinearLayoutManager = LinearLayoutManager(this)
+        val scaleCenterItemLayoutManager = ScaleCenterItemLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        mRecyclerView.layoutManager = scaleCenterItemLayoutManager
         generateData()
     }
 
